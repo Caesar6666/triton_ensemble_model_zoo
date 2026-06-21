@@ -1,0 +1,60 @@
+name: "resnet50_ensemble"
+platform: "ensemble"
+max_batch_size: 256
+
+input [
+    {
+        name: "RAW_IMAGE"
+        data_type: TYPE_STRING
+        dims: [ 1 ]
+    }
+]
+
+output [
+    {
+        name: "OUTPUT_RESULTS"
+        data_type: TYPE_STRING
+        dims: [ 1 ]
+    }
+]
+
+ensemble_scheduling {
+    step [
+        {
+            model_name: "resnet50_preprocess"
+            model_version: -1
+            input_map {
+                key: "RAW_IMAGE"
+                value: "RAW_IMAGE"
+            }
+            output_map {
+                key: "PREPROCESSED_IMAGE"
+                value: "preprocessed_image"
+            }
+        },
+        {
+            model_name: "resnet50_inference"
+            model_version: -1
+            input_map {
+                key: "input"
+                value: "preprocessed_image"
+            }
+            output_map {
+                key: "output"
+                value: "logits"
+            }
+        },
+        {
+            model_name: "resnet50_postprocess"
+            model_version: -1
+            input_map {
+                key: "LOGITS"
+                value: "logits"
+            }
+            output_map {
+                key: "OUTPUT_RESULTS"
+                value: "OUTPUT_RESULTS"
+            }
+        }
+    ]
+}

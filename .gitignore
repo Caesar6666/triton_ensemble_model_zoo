@@ -1,0 +1,172 @@
+# ===============================
+# Python 通用
+# ===============================
+
+# 字节码缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 编译生成的 C/C++ 扩展
+*.so
+*.pyd
+
+# 构建与打包目录
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 测试和覆盖率报告
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+*.cover
+*.py,cover
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# 文档构建
+docs/_build/
+
+# 虚拟环境（极其重要，禁止上传）
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.venv.bak/
+pythonenv*
+
+# 包管理器特定
+pip-log.txt
+pip-delete-this-directory.txt
+# 如果你使用 Pipenv
+Pipfile.lock
+# 如果你使用 Poetry（通常锁文件建议上传，但某些人选择忽略，根据团队决定。这里建议保留上传，所以注释掉，不强制忽略）
+# poetry.lock
+
+# ===============================
+# macOS 系统文件
+# ===============================
+
+# Finder 生成的文件夹视图缓存
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 图标文件（Thumbs.db 为 Windows，但兼容保留）
+Thumbs.db
+ehthumbs.db
+
+# macOS 资源分叉文件
+._*
+
+# 时间机器本地快照
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Spotlight 索引
+.Spotlight-V100
+.Trashes
+
+# ===============================
+# IDE / 编辑器
+# ===============================
+
+# PyCharm（JetBrains 全家桶）
+.idea/
+*.iml
+*.iws
+out/
+.idea_modules/
+
+# VS Code
+.vscode/
+*.code-workspace
+.vscode-test/
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+*.un~
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ===============================
+# 环境变量与敏感信息
+# ===============================
+
+# 环境配置文件（包含密钥、API 令牌等）
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+secrets.yaml
+secrets.yml
+
+# ===============================
+# 日志与数据库
+# ===============================
+
+# 日志文件
+*.log
+*.pid
+
+# 本地数据库文件（SQLite 等）
+*.db
+*.sqlite
+*.sqlite3
+
+# ===============================
+# Jupyter Notebook（如有）
+# ===============================
+
+.ipynb_checkpoints/
+*.ipynb_checkpoints*
+
+# ===============================
+# 其他杂项
+# ===============================
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# macOS 自动生成的备份文件
+*.bak
+
+# 自定义的文件
+*.DS_Store
+*.bin
+*.xml
+*.onnx
+*.plan
+*.engine
+*.pt
+*.pth

@@ -1,0 +1,28 @@
+name: "resnet50_postprocess"
+backend: "python"
+max_batch_size: 256
+default_model_filename: "postprocess.py"
+
+input [
+    {
+        name: "LOGITS"
+        data_type: TYPE_FP32
+        dims: [ 1000 ]
+    }
+]
+
+output [
+    {
+        name: "OUTPUT_RESULTS"
+        data_type: TYPE_STRING
+        dims: [ 1 ]
+    }
+]
+
+
+instance_group [
+  {
+    count: 32
+    kind: KIND_CPU
+  }
+]
