@@ -1,0 +1,40 @@
+name: "deeplabv3_inference"
+backend: "onnxruntime"
+default_model_filename: "deeplabv3_resnet50_coco.onnx"
+# backend: "tensorrt"
+# default_model_filename: "deeplabv3_resnet50_coco_fp16.plan"
+max_batch_size: 128
+
+dynamic_batching {
+  max_queue_delay_microseconds: 100000
+  preferred_batch_size: [ 4, 16, 32, 64, 128 ]
+}
+
+input [
+  {
+    name: "input"
+    data_type: TYPE_FP32
+    dims: [3, 512, 512]
+  }
+]
+
+output [
+  {
+    name: "output"
+    data_type: TYPE_FP32
+    dims: [-1, -1, -1]
+  },
+  {
+    name: "621"
+    data_type: TYPE_FP32
+    dims: [-1, -1, -1]
+  }
+]
+
+instance_group [
+  {
+    count: 1
+    kind: KIND_GPU
+    gpus: [0]  # 使用第 0 号 GPU
+  }
+]
