@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 import os
 import torch
-import cv2
 
 
 if __name__ == "__main__":
@@ -33,6 +32,3 @@ if __name__ == "__main__":
         for score, class_id, xyxy in zip(scores, classes_ids, xyxys):
             print(score, class_id, xyxy)
 
-        
-        # save_path = os.path.join(save_dir, image_file)
-        # cv2.imwrite(save_path, out)

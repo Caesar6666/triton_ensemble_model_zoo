@@ -93,27 +93,10 @@ ehthumbs.db
 # IDE / 编辑器
 # ===============================
 
-# PyCharm（JetBrains 全家桶）
-.idea/
-*.iml
-*.iws
-out/
-.idea_modules/
-
 # VS Code
 .vscode/
 *.code-workspace
 .vscode-test/
-
-# Vim / Neovim
-*.swp
-*.swo
-*~
-*.un~
-
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
 
 # ===============================
 # 环境变量与敏感信息
@@ -170,3 +153,6 @@ temp/
 *.engine
 *.pt
 *.pth
+*.zip
+*.tar
+*.tar.gz
